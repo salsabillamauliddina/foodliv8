@@ -1,0 +1,14 @@
+[
+    {
+        "food_name" : "Ramen Ox Meat",
+        "origin" : "Japan, Kyoto",
+        "category" : "Food",
+        "description" : "This food is consist of noodles and Ox meat, really strong flavour"
+    },
+    {
+        "food_name" : "Nasi Kucing",
+        "origin" : "Indonesia, Java Region",
+        "category" : "Food",
+        "description" : "Food is delicious, in a small portion, making me want to hang out more on this so called angkringan "
+    }
+]

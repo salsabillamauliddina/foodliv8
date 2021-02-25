@@ -1,0 +1,22 @@
+[
+    {
+        "first_name" : "Bard",
+        "last_name" : "Schweeiner",
+        "username" : "Bardweise",
+        "password" : "bard1234",
+        "email" : "bardweiss@mail.com",
+        "birth_date": "2000-02-24",
+        "gender": "male",
+        "user_location": "Indonesia"
+    },
+    {
+        "first_name" : "Ryn",
+        "last_name" : "Noomi",
+        "username" : "rynryn23",
+        "password" : "rynchi11",
+        "email" : "rynchon@mail.com",
+        "birth_date": "1998-02-24",
+        "gender": "female",
+        "user_location": "Japan"
+    }
+]
