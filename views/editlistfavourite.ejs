@@ -3,24 +3,24 @@
     <%- include('partials/head') %>
     <body>
         <%- include('partials/nav') %>
-        <h1>Add List Favourite</h1>
-        <form action="/myfoodliv8/add" method="POST">
+        <h1>Edit List Favourite</h1>
+        <form action="/myfoodliv8/edit" method="POST">
             <div class="form-group mid col-6">
                 <label class="form-label bigger-text" for="favoriteListName"> Name The Story </label>
-                <input class="form-control" type="text" name="favoriteListName" placeholder="">
+                <input class="form-control" type="text" name="favoriteListName" placeholder="" value="<%= mainData.favoriteListName %>">
             </div>
             <div class="form-group mid col-6">
                 <label class="form-label bigger-text" for="FoodId">Food</label>
                     <select class="form-control" name="FoodId">
                         <option selected disabled> Select Food </option>
-                        <% data.forEach(el => { %>
-                            <option value="<%= el.id %>"> <%= el.food_name %> </option>
-                        <% }); %>
+                            <% food.forEach(el => { %>
+                                    <option value="<%= el.id %>"> <%= el.food_name %><option>
+                            <% }); %>
                     </select>
             </div>
             <div class="form-group mid col-6">
-                <label class="form-label bigger-text" for="listDescription">Share Your Story</label>
-                <input class="form-control" type="text" name="listDescription" placeholder="When I was Going to .....">
+                <label class="form-label bigger-text" for="listDescription"> Share Your Story </label>
+                <input class="form-control" type="text" name="listDescription" placeholder="" value="<%= mainData.listDescription %>">
             </div>
             <button type="submit" class="btn btn-primary">Add</button>
             <button class="btn btn-primary"><a href="/myfoodliv8">Cancel</a></button>

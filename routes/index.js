@@ -5,19 +5,21 @@ const aboutUsRoute = require('./aboutUsRoute');
 const myFoodRoute = require('./myFoodRoute');
 const foodListRoute = require('./foodListRoute');
 const signUpRoute = require('./signUpRoute');
-const loginRoute = require('./loginRoute')
+const loginRoute = require('./loginRoute');
+const failedRoute = require('./failedRoute')
+const logoutRoute = require('./logoutRoute');
+const auth = require('../middlewares/auth')
 
-const mid = (req, res, next) => {
-    console.log(req.session)
-    next()
-
-}
-
-router.use('/', mid, loginRoute)
+router.use('/', loginRoute)
 router.use('/', homeRoute)
-router.use('/', aboutUsRoute)
-router.use('/', myFoodRoute)
-router.use('/', foodListRoute)
 router.use('/', signUpRoute)
+router.use('/', failedRoute)
+router.use('/', logoutRoute)
+
+router.use(auth)
+
+router.use('/', aboutUsRoute)
+router.use('/', foodListRoute)
+router.use('/', myFoodRoute)
 
 module.exports = router
