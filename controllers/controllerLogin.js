@@ -1,4 +1,5 @@
-const { User } = require('../models')
+const { User } = require('../models');
+const { comparePassword } = require('../helper/bcrypt')
 
 class ControllerLogin {
     static showLoginPage(req, res) {
@@ -12,13 +13,14 @@ class ControllerLogin {
             where: {email}
         })
         .then(user => {
-            if(user.password == password) {
+            const correctPassword = comparePassword(req.body.password, user.password)
+
+            if(user && correctPassword) {
                 req.session.userId = {
                     id : user.id,
                     first_name : user.first_name,
                     last_name : user.last_name
                 }
-                // console.log(req.session)
                 res.redirect('/')
             } else {
                 res.redirect('/failed?message=Invalid email/password')
