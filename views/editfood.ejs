@@ -14,6 +14,10 @@
                 <input class="form-control" type="text" name="origin" placeholder="e.g Indonesia, Bandung" value="<%= data.origin %>">
             </div>
             <div class="form-group mid col-6">
+                <label class="form-label bigger-text" for="imageURL">Image URL</label>
+                <input class="form-control" type="text" name="imageURL" placeholder="URL Image Link" value="<%= data.imageURL %>>
+            </div>
+            <div class="form-group mid col-6">
                 <label class="form-label bigger-text" for="category">Category</label>
                 <select class="form-control" name="category">
                 <% if (data.category === "Food") { %>

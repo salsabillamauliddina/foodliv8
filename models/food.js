@@ -54,6 +54,15 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    imageURL: {
+      type : DataTypes.STRING,
+      validate : {
+        isUrl : {
+          args : false,
+          msg : "Please only insert URL"
+        }
+      }
+    },
   }, {
     sequelize,
     modelName: 'Food',

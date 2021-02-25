@@ -17,9 +17,9 @@ class ControllerFoodList {
     }
 
     static addFoodPost(req, res) {
-        let {food_name, origin, category, description} = req.body;
+        let {food_name, origin, category, description, imageURL} = req.body;
 
-        Food.create({food_name, origin, category, description})
+        Food.create({food_name, origin, category, description, imageURL})
         .then(data => {
             res.redirect('/foodlist')
         })
@@ -46,9 +46,9 @@ class ControllerFoodList {
 
     static editFoodPost(req, res) {
         let id = req.params.id;
-        let {food_name, origin, category, description} = req.body;
+        let {food_name, origin, category, description, imageURL} = req.body;
 
-        Food.update({food_name, origin, category, description}, {
+        Food.update({food_name, origin, category, description, imageURL}, {
             where : {id}
         })
         .then(() => {

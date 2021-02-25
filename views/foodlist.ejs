@@ -19,7 +19,7 @@
             <tbody>
                 <% data.forEach(el => { %>
                     <tr>
-                        <td>IMAGE</td>
+                        <td><img src="<%= el.imageURL %>" alt="food"></td>
                         <td><%= el.food_name %></td>
                         <td><%= el.origin %></td>
                         <td><%= el.category %></td>

@@ -8,8 +8,10 @@ const signUpRoute = require('./signUpRoute');
 const loginRoute = require('./loginRoute');
 const failedRoute = require('./failedRoute')
 const logoutRoute = require('./logoutRoute');
+const newsLetter = require('./newsLetterRoute')
 const auth = require('../middlewares/auth')
 
+router.use('/', newsLetter)
 router.use('/', loginRoute)
 router.use('/', homeRoute)
 router.use('/', signUpRoute)
@@ -23,3 +25,4 @@ router.use('/', foodListRoute)
 router.use('/', myFoodRoute)
 
 module.exports = router
+
