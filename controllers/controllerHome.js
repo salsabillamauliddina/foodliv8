@@ -2,7 +2,9 @@ const ControllerMyFood = require("./controllerMyFood");
 
 class ControllerHome {
     static showHome(req, res) {
-        res.render('home')
+        let msg = req.query;
+        console.log(msg)
+        res.render('home', { msg })
     }
 
 }

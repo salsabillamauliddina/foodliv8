@@ -12,7 +12,8 @@ class ControllerFoodList {
     }
 
     static addFoodPage(req, res) {
-        res.render('addfood')
+        let errormsg = req.query;
+        res.render('addfood', { errormsg })
     }
 
     static addFoodPost(req, res) {
@@ -23,7 +24,11 @@ class ControllerFoodList {
             res.redirect('/foodlist')
         })
         .catch(err => {
-            res.send(err)
+            let errors = [];
+            err.errors.forEach(el => {
+                errors.push(el.message)
+            });
+            res.redirect(`/foodlist/add?errors=${errors}`)
         })
     }
 

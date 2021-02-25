@@ -12,7 +12,6 @@ class ControllerMyFood {
             ]
         })
         .then(data => {
-            // console.log(data)
             res.render('myfoodliv8', { data, first_name, last_name })
         })
         .catch(err => {
@@ -21,10 +20,10 @@ class ControllerMyFood {
     }
 
     static addPage(req, res) {
+        let errormsg = req.query;
         Food.findAll()
         .then(data => {
-            // console.log(data)
-            res.render('addlistfavourite', { data })
+            res.render('addlistfavourite', { data, errormsg })
         })
         .catch(err => {
             res.send(err)
@@ -40,14 +39,19 @@ class ControllerMyFood {
             res.redirect('/myfoodliv8')
         })
         .catch(err => {
-            res.send(err)
+            // res.send(err)
+            let errors = [];
+            err.errors.forEach(el => {
+                errors.push(el.message)
+            });
+            res.redirect(`/myfoodliv8/add?errors=${errors}`)
         })
     }
 
     static editPage(req, res) {
-        let { id, first_name, last_name } = req.session.userId
+        let { id, first_name, last_name } = req.session.userId;
         let mainData;
-
+        
         Favourite.findAll({
             where : {UserId : id},
             include : [
@@ -61,14 +65,13 @@ class ControllerMyFood {
             return Food.findAll()
         })
         .then(food => {
-            console.log(mainData)
-            // console.log(food)
             res.render('editlistfavourite', { mainData, food , first_name, last_name })
         })
         .catch(err => {
             res.send(err)
         })
     }
+
 }
 
 module.exports = ControllerMyFood;

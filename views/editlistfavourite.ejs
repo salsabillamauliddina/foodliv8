@@ -3,6 +3,7 @@
     <%- include('partials/head') %>
     <body>
         <%- include('partials/nav') %>
+        <pre><%= JSON.stringify(mainData) %></pre>
         <h1>Edit List Favourite</h1>
         <form action="/myfoodliv8/edit" method="POST">
             <div class="form-group mid col-6">
@@ -13,9 +14,9 @@
                 <label class="form-label bigger-text" for="FoodId">Food</label>
                     <select class="form-control" name="FoodId">
                         <option selected disabled> Select Food </option>
-                            <% food.forEach(el => { %>
-                                    <option value="<%= el.id %>"> <%= el.food_name %><option>
-                            <% }); %>
+                        <% food.forEach(el => { %>
+                            <option value="<%= el.id %>"> <%= el.food_name %> </option>
+                        <% }); %>
                     </select>
             </div>
             <div class="form-group mid col-6">

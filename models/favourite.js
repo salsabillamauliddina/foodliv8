@@ -18,8 +18,24 @@ module.exports = (sequelize, DataTypes) => {
   Favourite.init({
     UserId: DataTypes.INTEGER,
     FoodId: DataTypes.INTEGER,
-    favoriteListName: DataTypes.STRING,
-    listDescription: DataTypes.STRING
+    favoriteListName: {
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          args : true,
+          msg : "The Story must be told"
+        }
+      }
+    },
+    listDescription: {
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          args : true,
+          msg : "Please tell us detail of your story"
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'Favourite',
