@@ -2,7 +2,7 @@
   "name": "foodliv8",
   "version": "1.0.0",
   "description": "pair project phase 1",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/salsabillamauliddina/foodliv8.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "naufal - aca",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/salsabillamauliddina/foodliv8/issues"
@@ -20,6 +20,7 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "pg": "^8.5.1",
     "sequelize": "^6.5.0"
   },
