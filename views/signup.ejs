@@ -1,48 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include('partials/head') %>
-    <body>
-        <%- include('partials/nav') %>
-        <h1>Sign Up</h1>
-        <form action="/signup" method="POST">
-            <div class="form-group mid col-6">
-                <label class="form-label bigger-text" for="first_name"> First Name </label>
-                <input class="form-control" type="text" name="first_name" placeholder="">
+<html>
+<head>
+    <title>Sign Up!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body> 
+    <div class="container">
+        <div class="myCard">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="myLeftCtn"> 
+                        <form class="myForm text-center" action="/signup" method="POST">
+                            <header>Sign Up</header>
+                            <div class="form-group" >
+                                <i class="fas fa-user"></i>
+                                <input for="first_name" class="myInput" name="first_name"  type="text" placeholder="First Name" id=" first_name" required> 
+                            </div>
+
+                            <div class="form-group">
+                                <i class="fas fa-user"></i>
+                                <input for="last_name" class="myInput" name="last_name" type="text" placeholder="Last Name" id=" last_name" required> 
+                            </div>
+
+                            <div class="form-group">
+                                <i class="fas fa-user"></i>
+                                <input class="myInput" type="text" name="username" placeholder="Username" id=" username" required> 
+                            </div>
+
+                            <div class="form-group">
+                                <i class="fas fa-envelope"></i>
+                                <input class="myInput"name="email" placeholder="Email" type="text" id="email" required> 
+                            </div>
+ 
+                            <div class="form-group">
+                                <i class="fas fa-lock"></i>
+                                <input for="password" class="myInput" type="password" name="password" id="password" placeholder="Password" required> 
+                            </div>
+
+                            <!-- <div class="form-group">
+                                <i class="fas fa-lock"></i>
+                                <label class="form-check-label" for="female">Female</label><br>
+                                <input class="form-check-input" type="radio" name="gender" value="female"><br>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <i class="fas fa-lock"></i>
+                                <label class="form-check-label" for="male">Male</label><br>
+                                <input class="form-check-input" type="radio" name="gender" value="male"><br>
+                            </div> -->
+                            <!-- <br>
+                            <div class="form-group">
+                                <i class="fas fa-lock"></i>
+                                <label class="form-label bigger-text" for="date">Birth Date</label> <br>
+                                <input class="form-control" type="date" name="birth_date" placeholder="yyyy-mm-dd" value=""><br><br>
+                            </div> -->
+                            <!-- <br> -->
+                            <div class="form-group">
+                                <label>
+                                    <input id="check_1" name="check_1"  type="checkbox" required><small> I read and agree to Terms & Conditions</small></input> 
+                                    <div class="invalid-feedback">You must check the box.</div>
+                                </label>
+                            </div>
+
+                            <input type="submit" class="butt" value="Sign Up">
+                            <a href="/"><input type="button" class="butt" value="Back"></a>
+                            
+                        </form>
+                    </div>
+                </div> 
+                <div class="col-md-6">
+                    <div class="myRightCtn">
+                            <div class="box"><header>Hello Foodies!</header>
+                            <p> Enter your personal details and start journey your food with us!</p>
+                                <input type="button" class="butt_out" value="Learn More"/>
+                            </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group mid col-6">
-                <label class="form-label bigger-text" for="last_name">Last Name</label>
-                <input class="form-control" type="text" name="last_name" placeholder="">
-            </div>
-            <div class="form-group mid col-6">
-                <label class="form-label bigger-text" for="username">Username</label>
-                <input class="form-control" type="text" name="username" placeholder="">
-            </div>
-            <div class="form-group mid col-6">
-                <label class="form-label bigger-text" for="password">Password</label>
-                <input class="form-control" type="text" name="password" placeholder="">
-            </div>
-            <div class="form-group mid col-6">
-                <label class="form-label bigger-text" for="email">E-mail</label>
-                <input class="form-control" type="text" name="email" placeholder="">
-            </div>
-            <div class="form-check mid col-6">
-                <label class="form-check-label" for="male">Male</label>
-                <input class="form-check-input" type="radio" name="gender" value="male">
-            </div>
-            <div class="form-check mid col-6">
-                <label class="form-check-label" for="female">Female</label>
-                <input class="form-check-input" type="radio" name="gender" value="female">
-            </div>
-            <div class="form-group mid col-6">
-                <label class="form-label bigger-text" for="user_location">Location</label>
-                <input class="form-control" type="text" name="user_location" placeholder="">
-            </div>
-            <div class="form-group mid col-6">
-                <label class="form-label bigger-text" for="date">Birth Date</label> <br>
-                <input class="form-control" type="date" name="birth_date" placeholder="yyyy-mm-dd" value=""><br><br>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
-        </form>
-        <%- include('partials/script') %> 
-    </body>
+        </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+</body>
 </html>
+

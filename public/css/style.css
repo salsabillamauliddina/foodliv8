@@ -1,111 +1,110 @@
-body {
-    font-family: "Montserrat";
-    font-weight: 400;
-    text-align: center;
-    background: url('/img/movieapp.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-  
-  h1, p {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-      /* color: rgb(255, 255, 255); */
-      /* -webkit-text-stroke-width: 0.5px; */
-      /* -webkit-text-stroke-color: black; */
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-  }
-
-  button a {
-    color: aliceblue;
-    text-decoration: none;
-  }
-
-.background-behind {
-  position: fixed;
-  margin: auto auto;
-  width: 70%; 
-  height: 80%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(205, 193, 193, 0.5);
-  z-index: -1;
-  border-radius: 1rem;
-}
-
-.bigger-text {
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.table {
-    border-radius: 5px;
-    width: 50%;
-    margin: 0px auto;
-    float: none;
-    background-color: aliceblue;
-}
-
- .mid {
-    width: 50%;
-    margin: 0px auto;
-    float: none;
-    padding-bottom: 15px;
- }
-
- .press {
-     width: 10%;
- }
-
-  .navbar-brand {
-    font-family: "Ubuntu", sans-serif;
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  
-  .nav-item {
-    padding: 0 18px;
-  }
-  
-  .nav-link {
-    font-size: 1.2rem;
-    font-family: 'Montserrat';
-  }
-
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
-.form-signin .checkbox {
-  font-weight: 400;
-}
-.form-signin .form-control {
-  position: relative;
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family: poppins, sans-serif;
+  font-weight: 700;
   box-sizing: border-box;
-  height: auto;
+}
+
+#header{
+  padding: 20px;
+  width: 100%;
+  background: #fbe7d3;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#header #logo{
+  font-style: italic;
+  font-size: 20px;
+}
+  
+#header #logo span{
+  color:brown ;
+}
+
+#header nav{
+  color: #000;
+}
+  
+#header nav a{
+  font-size: 14px;
+  text-decoration: none;
   padding: 10px;
+  text-align: center;
+  color: black;
+}
+  
+#header nav a:hover{
+  opacity: 0.9;
+}
+
+#header nav a:last-child{
+  color: black;
+  background:#ffc7ba;
+  padding: 10px 20px;
+  margin-left: 30px;
+  border-radius: 30px;
+}
+
+#container{
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 20px;
+  height: 575px;
+}
+#bg-container{
+  width: 50%;
+}
+#bg-container svg{
+  width: 100%;
+  height: 90%;
+}
+#content-container{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#content-container h1{
+  color: brown;
+  font-weight: 900;
+  font-size: 100px;
+  line-height: 0.9em;
+  margin-bottom: 45px;
+}
+
+#content-container p{
+  line-height: 1.8em;
+  font-weight: 500;
+}
+#content-container button{
+  border: none;
+  outline: none;
+  color: black;
+  background-color: #ffc7ba;
+  padding: 16px 0px;
+  border-radius: 40px;
   font-size: 16px;
+  width: 160px;
+  margin-top: 30px;
+  cursor: pointer;
 }
-.form-signin .form-control:focus {
-  z-index: 2;
+#content-container button:hover{
+  opacity: 0.9;
 }
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+
+.mid {
+  position: relative;
+  left: 25%;
+  text-align: center;
 }
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+img {
+  width: 250px;
 }

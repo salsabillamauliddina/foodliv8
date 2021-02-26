@@ -72,21 +72,21 @@ module.exports = (sequelize, DataTypes) => {
     },
     birth_date: {
       type : DataTypes.STRING,
-      validate : {
-        notEmpty : {
-          args : true,
-          msg : "Birth date can't be empty"
-        }
-      }
+      // validate : {
+      //   notEmpty : {
+      //     args : true,
+      //     msg : "Birth date can't be empty"
+      //   }
+      // }
     },
     gender: {
       type : DataTypes.STRING,
-      validate : {
-        notEmpty : {
-          args : true,
-          msg : "Gender can't be empty"
-        }
-      }
+      // validate : {
+      //   notEmpty : {
+      //     args : true,
+      //     msg : "Gender can't be empty"
+      //   }
+      // }
     },
     user_location: {
       type : DataTypes.STRING,
