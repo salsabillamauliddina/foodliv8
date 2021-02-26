@@ -22,11 +22,9 @@
                         <td><%= el.Food.food_name %></td>
                         <td><%= el.favoriteListName %></td>
                         <td><%= el.listDescription %></td>
-                        <td><%= el.createdAt.toLocaleString() %></td>
+                        <td><%= el.createdAt.toDateString() %></td>
                         <td>
-                            <button class="btn btn-warning"><a href="/myfoodliv8/edit">Edit</a></button> 
-                            <button class="btn btn-danger" onclick="return confirm('Are you sure want to delete?')"><a href="/">Delete</a></button>
-                            <button class="btn btn-info"><a href="/foodlist/<% el.Food.id %>">See The Food</a></button>
+                            <button class="btn btn-info"><a href="/foodlist/">See Food List</a></button>
                         </td>
                     </tr>
                 <% }); %>
